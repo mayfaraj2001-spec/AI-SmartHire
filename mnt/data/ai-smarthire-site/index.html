@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI SmartHire | הכנה חכמה לראיונות עבודה</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="AI SmartHire home">
+      <span class="brand-mark">AI</span>
+      <span>
+        <strong>SmartHire</strong>
+        <small>Interview Intelligence Platform</small>
+      </span>
+    </a>
+    <nav class="desktop-nav" aria-label="ניווט ראשי">
+      <a href="#how">איך זה עובד</a>
+      <a href="#analyzer">ניתוח מועמד</a>
+      <a href="#demo">דמו</a>
+      <a href="#team">צוות</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="פתיחת תפריט">☰</button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="ניווט מובייל">
+    <a href="#how">איך זה עובד</a>
+    <a href="#analyzer">ניתוח מועמד</a>
+    <a href="#demo">דמו</a>
+    <a href="#team">צוות</a>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content reveal">
+        <span class="eyebrow">אב טיפוס Web מבוסס AI</span>
+        <h1>הכנה חכמה ומותאמת אישית לראיונות עבודה</h1>
+        <p>
+          העלו קורות חיים, הזינו תיאור משרה וקבלו ציון התאמה, המלצות לשיפור,
+          שאלות סימולציה ומכתב מקדים מותאם — במקום אחד, בזמן אמת.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#analyzer">להתחלת הדמו</a>
+          <a class="btn ghost" href="#how">לראות איך זה עובד</a>
+        </div>
+        <div class="trust-row" aria-label="יכולות המערכת">
+          <span>CV Match</span>
+          <span>Interview Questions</span>
+          <span>Cover Letter</span>
+          <span>Actionable Feedback</span>
+        </div>
+      </div>
+
+      <div class="hero-card reveal delay-1" aria-label="תצוגת מערכת">
+        <div class="card-header">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="window-title">Live AI Analysis</span>
+        </div>
+        <div class="score-ring" id="heroScore">87%</div>
+        <h3>התאמה גבוהה לתפקיד</h3>
+        <p>זוהו חוזקות בניהול פרויקטים, אבטחת מידע ותקשורת מול בעלי עניין.</p>
+        <div class="mini-bars">
+          <div><span style="width:92%"></span></div>
+          <div><span style="width:78%"></span></div>
+          <div><span style="width:84%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Workflow</span>
+        <h2>שלושה שלבים פשוטים להכנה מקצועית</h2>
+        <p>המערכת מדמה שילוב בין תשתית אפליקטיבית לבין מנוע AI שמייצר תובנות דינמיות.</p>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card reveal">
+          <span class="step-num">01</span>
+          <h3>העלאת קורות חיים</h3>
+          <p>המשתמש מעלה או מדביק טקסט מתוך קורות החיים שלו.</p>
+        </article>
+        <article class="step-card reveal delay-1">
+          <span class="step-num">02</span>
+          <h3>הזנת משרה מבוקשת</h3>
+          <p>מוסיפים תיאור תפקיד, דרישות, תחום וניסיון נדרש.</p>
+        </article>
+        <article class="step-card reveal delay-2">
+          <span class="step-num">03</span>
+          <h3>קבלת תוצרים מיידיים</h3>
+          <p>ציון התאמה, המלצות, שאלות ראיון ומכתב מקדים מותאם.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="analyzer-section" id="analyzer">
+      <div class="panel form-panel reveal">
+        <span class="eyebrow">Candidate Analyzer</span>
+        <h2>ניתוח מועמד חכם</h2>
+        <p class="muted">לצורך הדמו, הניתוח מתבצע בצד הלקוח ומדמה מנוע AI. ניתן לחבר בהמשך API של Gemini.</p>
+
+        <form id="analyzerForm">
+          <label>
+            שם מלא
+            <input id="fullName" type="text" placeholder="לדוגמה: מאי פרג׳" required />
+          </label>
+          <label>
+            תחום / תפקיד יעד
+            <input id="targetRole" type="text" placeholder="לדוגמה: Cyber Project Manager" required />
+          </label>
+          <label>
+            קורות חיים
+            <textarea id="resumeText" rows="8" placeholder="הדביקו כאן ניסיון, כישורים, השכלה ופרויקטים..." required></textarea>
+          </label>
+          <label>
+            תיאור משרה
+            <textarea id="jobText" rows="8" placeholder="הדביקו כאן את דרישות המשרה, תחומי אחריות וכישורים נדרשים..." required></textarea>
+          </label>
+          <div class="upload-box" id="uploadBox">
+            <input id="fileInput" type="file" accept=".txt,.md,.csv" hidden />
+            <button class="btn ghost full" type="button" id="uploadBtn">העלאת קובץ טקסט של קו״ח</button>
+            <small>בדמו זה נתמכים קבצי TXT / MD / CSV. לקבצי PDF או DOCX נדרש חיבור שרת.</small>
+          </div>
+          <button class="btn primary full" type="submit">נתחו התאמה</button>
+        </form>
+      </div>
+
+      <div class="panel results-panel reveal delay-1">
+        <div class="results-empty" id="emptyState">
+          <div class="empty-icon">✦</div>
+          <h3>התוצרים יופיעו כאן</h3>
+          <p>לאחר מילוי הפרטים תקבלו ניתוח מלא ומוכן להצגה בדמו.</p>
+        </div>
+
+        <div class="results" id="results" hidden>
+          <div class="result-top">
+            <div>
+              <span class="eyebrow">Match Score</span>
+              <h2 id="resultTitle">ציון התאמה</h2>
+            </div>
+            <div class="big-score" id="matchScore">0%</div>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="תוצרי המערכת">
+            <button class="tab active" data-tab="insights" type="button">תובנות</button>
+            <button class="tab" data-tab="questions" type="button">שאלות ראיון</button>
+            <button class="tab" data-tab="letter" type="button">מכתב מקדים</button>
+          </div>
+
+          <section class="tab-panel active" id="insights">
+            <h3>חוזקות שזוהו</h3>
+            <ul id="strengthsList"></ul>
+            <h3>המלצות לשיפור קורות החיים</h3>
+            <ul id="improvementsList"></ul>
+          </section>
+
+          <section class="tab-panel" id="questions">
+            <h3>שאלות סימולציה מותאמות</h3>
+            <ol id="questionsList"></ol>
+          </section>
+
+          <section class="tab-panel" id="letter">
+            <h3>Cover Letter מותאם</h3>
+            <div class="letter-box" id="coverLetter"></div>
+            <button class="btn ghost" id="copyLetter" type="button">העתקת המכתב</button>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section demo-section" id="demo">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Live Demo Script</span>
+        <h2>מה להציג בכיתה</h2>
+        <p>תסריט קצר להדגמה חיה: העלאה/הדבקה, הזנת משרה, הפקת תוצרים והשוואת כלי AI.</p>
+      </div>
+      <div class="demo-grid">
+        <article class="demo-card reveal">
+          <h3>Base44</h3>
+          <p>תשתית המוצר: מסכים, טפסים, בסיס נתונים, לוגיקה וחוויית משתמש.</p>
+        </article>
+        <article class="demo-card reveal delay-1">
+          <h3>Gemini</h3>
+          <p>מנוע הניתוח: השוואת קו״ח למשרה, ניסוח שאלות, המלצות ומכתב מקדים.</p>
+        </article>
+        <article class="demo-card reveal delay-2">
+          <h3>מדדי הצלחה</h3>
+          <p>תוצרים מדויקים, שאלות איכותיות, שיפור קו״ח ומשוב חיובי ממשתמשי פיילוט.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="team" id="team">
+      <div class="team-card reveal">
+        <span class="eyebrow">Final Project</span>
+        <h2>AI SmartHire</h2>
+        <p>פרויקט גמר: שירה שגיא, מאי פרג׳, עדי מאן.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 AI SmartHire · Prototype for academic demo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
